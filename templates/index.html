@@ -1,0 +1,29 @@
+<html>
+<head>
+</head>
+
+<body style="font-family: sans-serif">
+<div>
+    <img src="./static/logo.png" alt="Logo" style="max-width: 250px">
+</div>
+
+<h1>Upload</h1>
+<form action="uploader" method="POST"
+      enctype="multipart/form-data">
+    <input type="file" name="file"/>
+    <input type="submit" value="Upload"/>
+</form>
+
+{% if files|length > 0 %}
+<h1>Download</h1>
+<ul style="list-style-type: circle">
+    {% for file in files %}
+    <li>{{ file }} [<a href="downloader/{{ file }}">download</a>] [<a
+            href="delete/{{ file }}">delete</a>]
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+</body>
+</html>
