@@ -14,12 +14,5 @@ pipeline {
                 '''
             }
         }
-        stage('Shell') {
-            steps {
-                sh '''#!/bin/sh
-                    echo "Hello from sh"
-                '''
-            }
-        }
     }
 }
